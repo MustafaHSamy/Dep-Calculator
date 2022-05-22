@@ -42,16 +42,18 @@ const StraightLine = () => {
         openingBV[i + 1] = closingBV[i];
         accDep[i] = (i + 1) * depYearly;
       }
-      console.log("Yearly Dep = ", depYearly);
-      console.log("openingBV = ", openingBV);
-      console.log("Accumulated Dep = ", accDep);
-      console.log("closingBV = ", closingBV);
       setAccumulatedDep(accDep);
       setCBV(closingBV);
       setOBV(openingBV);
       setYearlyDep(depYearly);
     }
   };
+
+  useEffect(
+    () => handleCalculating(),
+    [firstCost, numberOfPeriods, salvageValue]
+  );
+
   return (
     <ScrollView style={styles.screen}>
       <View style={styles.inputContainer}>
@@ -61,7 +63,6 @@ const StraightLine = () => {
           onChangeText={(e) => {
             if (!isNaN(Number(e))) {
               setNumberOfPeriods(Number(e));
-              handleCalculating();
             } else {
               Alert.alert("Invalid input", "Please enter a number");
             }
@@ -73,7 +74,6 @@ const StraightLine = () => {
           onChangeText={(e) => {
             if (!isNaN(Number(e))) {
               setFirstCost(Number(e));
-              handleCalculating();
             } else {
               Alert.alert("Invalid input", "Please enter a number");
             }
@@ -85,34 +85,43 @@ const StraightLine = () => {
           onChangeText={(e) => {
             if (!isNaN(Number(e))) {
               setSalvageValue(Number(e));
-              handleCalculating();
             } else {
               Alert.alert("Invalid input", "Please enter a number");
             }
           }}
         />
       </View>
-      <View style={styles.tableContainer}>
-        {CBV.map((BV, index) => {
-          return (
-            <View key={`Year${index + 1}`}>
-              <Text style={styles.outputHeading}>{`Year${index + 1}`}</Text>
+      {firstCost !== "" && (
+        <View style={styles.tableContainer}>
+          {CBV.map((BV, index) => {
+            return (
+              <View key={`Year${index + 1}`}>
+                <Text style={styles.outputHeading}>{`Year ${index + 1}`}</Text>
 
-              <View style={styles.numbersContainer}>
-                <Text style={styles.data}>{`Opening BV = ${OBV[index]}`}</Text>
+                <View style={styles.numbersContainer}>
+                  <Text
+                    style={styles.data}
+                  >{`Opening BV = ${OBV[index]}`}</Text>
 
-                <Text style={styles.data}>{`Depreciation = ${yearlyDep}`}</Text>
+                  <Text
+                    style={styles.data}
+                  >{`Depreciation = ${yearlyDep.toFixed(2)}`}</Text>
 
-                <Text
-                  style={styles.data}
-                >{`Accumulated Dep = ${accumulatedDep[index]}`}</Text>
+                  <Text
+                    style={styles.data}
+                  >{`Accumulated Dep = ${accumulatedDep[index].toFixed(
+                    2
+                  )}`}</Text>
 
-                <Text style={styles.data}>{`Closing BV = ${BV}`}</Text>
+                  <Text style={styles.data}>{`Closing BV = ${BV.toFixed(
+                    2
+                  )}`}</Text>
+                </View>
               </View>
-            </View>
-          );
-        })}
-      </View>
+            );
+          })}
+        </View>
+      )}
     </ScrollView>
   );
 };

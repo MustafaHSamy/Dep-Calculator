@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Dep-Calculator",
+    "name": "Depreciation Calculator",
     "slug": "Dep-Calculator",
     "version": "1.0.0",
     "orientation": "default",
@@ -28,6 +28,8 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "An application that calculates the depreciation for economic applications ( still under development, straight line method is the only one working)",
+    "githubUrl": "https://github.com/MustafaHSamy/Dep-Calculator.git"
   }
 }
