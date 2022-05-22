@@ -17,9 +17,10 @@ const HomeScreen = ({ navigation }) => {
           onPress={() => navigation.navigate("SLM")}
           buttonStyles={styles.button}
           textStyles={styles.buttonText}
-          title="Straight-line method"
+          title="Straight-line"
         />
         <MadeButton
+          onPress={() => navigation.navigate("DDB")}
           buttonStyles={styles.button}
           textStyles={styles.buttonText}
           title="Double-declining balcance"

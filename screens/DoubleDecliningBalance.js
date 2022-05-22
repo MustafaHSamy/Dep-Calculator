@@ -7,7 +7,6 @@ import {
   View,
 } from "react-native";
 import React, { useEffect, useState } from "react";
-import Header from "../components/Header";
 
 const StraightLine = () => {
   const tableHeadings = [
@@ -33,14 +32,16 @@ const StraightLine = () => {
       firstCost !== undefined &&
       salvageValue !== undefined;
     if (inputsAreValid) {
-      let depYearly = (firstCost - salvageValue) / numberOfPeriods;
+      let depYearly = [];
       let openingBV = [firstCost];
       let closingBV = [];
-      let accDep = [];
+      let decRate = 2 * (1 / numberOfPeriods);
+      let accDep = [decRate * openingBV[0]];
       for (let i = 0; i < numberOfPeriods; i++) {
-        closingBV[i] = openingBV[i] - depYearly;
+        depYearly[i] = decRate * openingBV[i];
+        closingBV[i] = openingBV[i] - depYearly[i];
         openingBV[i + 1] = closingBV[i];
-        accDep[i] = (i + 1) * depYearly;
+        accDep[i] = firstCost - closingBV[i];
       }
       setAccumulatedDep(accDep);
       setCBV(closingBV);
@@ -103,15 +104,13 @@ const StraightLine = () => {
                     style={styles.data}
                   >{`Opening BV = ${OBV[index]}`}</Text>
 
-                  <Text
-                    style={styles.data}
-                  >{`Depreciation = ${yearlyDep.toFixed(2)}`}</Text>
+                  <Text style={styles.data}>{`Depreciation = ${yearlyDep[
+                    index
+                  ].toFixed(2)}`}</Text>
 
                   <Text
                     style={styles.data}
-                  >{`Accumulated Dep = ${accumulatedDep[index].toFixed(
-                    2
-                  )}`}</Text>
+                  >{`Accumulated Dep = ${accumulatedDep[index]}`}</Text>
 
                   <Text style={styles.data}>{`Closing BV = ${BV.toFixed(
                     2

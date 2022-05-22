@@ -3,6 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeScreen from "./screens/HomeScreen";
 import StraightLine from "./screens/StraightLine";
+import DoubleDecliningBalance from "./screens/DoubleDecliningBalance";
 
 const Stack = createNativeStackNavigator();
 
@@ -23,6 +24,14 @@ export default function App() {
           component={StraightLine}
           options={{
             title: "Straight-line method",
+            headerStyle: { backgroundColor: "#43938A" },
+          }}
+        />
+        <Stack.Screen
+          name="DDB"
+          component={DoubleDecliningBalance}
+          options={{
+            title: "Double-declining balance method",
             headerStyle: { backgroundColor: "#43938A" },
           }}
         />
