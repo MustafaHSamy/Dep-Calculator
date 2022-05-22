@@ -23,7 +23,7 @@ export default function App() {
           component={StraightLine}
           options={{
             title: "Straight-line method",
-            headerStyle: { backgroundColor: "#F86400" },
+            headerStyle: { backgroundColor: "#43938A" },
           }}
         />
       </Stack.Navigator>
