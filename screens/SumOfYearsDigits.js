@@ -8,7 +8,7 @@ import {
 } from "react-native";
 import React, { useEffect, useState } from "react";
 
-const StraightLine = () => {
+const SumOfYearsDigits = () => {
   const [numberOfPeriods, setNumberOfPeriods] = useState(0);
   const [firstCost, setFirstCost] = useState("");
   const [salvageValue, setSalvageValue] = useState("");
@@ -24,14 +24,22 @@ const StraightLine = () => {
       firstCost !== undefined &&
       salvageValue !== undefined;
     if (inputsAreValid) {
-      let depYearly = (firstCost - salvageValue) / numberOfPeriods;
+      let denominator = 0;
+      for (let n = numberOfPeriods; n > 0; n--) {
+        denominator += n;
+      }
+      let depYearly = [];
       let openingBV = [firstCost];
       let closingBV = [];
       let accDep = [];
       for (let i = 0; i < numberOfPeriods; i++) {
-        closingBV[i] = openingBV[i] - depYearly;
+        depYearly[i] =
+          (numberOfPeriods - i) *
+          (1 / denominator) *
+          (firstCost - salvageValue);
+        closingBV[i] = openingBV[i] - depYearly[i];
         openingBV[i + 1] = closingBV[i];
-        accDep[i] = (i + 1) * depYearly;
+        accDep[i] = firstCost - closingBV[i];
       }
       setAccumulatedDep(accDep);
       setCBV(closingBV);
@@ -94,9 +102,9 @@ const StraightLine = () => {
                     style={styles.data}
                   >{`Opening BV = ${OBV[index]}`}</Text>
 
-                  <Text
-                    style={styles.data}
-                  >{`Depreciation = ${yearlyDep.toFixed(2)}`}</Text>
+                  <Text style={styles.data}>{`Depreciation = ${yearlyDep[
+                    index
+                  ].toFixed(2)}`}</Text>
 
                   <Text
                     style={styles.data}
@@ -117,7 +125,7 @@ const StraightLine = () => {
   );
 };
 
-export default StraightLine;
+export default SumOfYearsDigits;
 
 const styles = StyleSheet.create({
   screen: {

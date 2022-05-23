@@ -26,6 +26,7 @@ const HomeScreen = ({ navigation }) => {
           title="Double-declining balcance"
         />
         <MadeButton
+          onPress={() => navigation.navigate("SYD")}
           buttonStyles={styles.button}
           textStyles={styles.buttonText}
           title="Sum-of-Years digits"
