@@ -61,7 +61,15 @@ const SumOfYearsDigits = () => {
           placeholder="Life periods"
           onChangeText={(e) => {
             if (!isNaN(Number(e))) {
-              setNumberOfPeriods(Number(e));
+              if (Number(e) > 500) {
+                Alert.alert(
+                  "buying for you great great children?",
+                  "I'm sorry but entering too long periods could make the app crash. If you have a problem with this, please contact me."
+                );
+                setNumberOfPeriods(500);
+              } else {
+                setNumberOfPeriods(Number(e));
+              }
             } else {
               Alert.alert("Invalid input", "Please enter a number");
             }
@@ -90,17 +98,19 @@ const SumOfYearsDigits = () => {
           }}
         />
       </View>
-      {firstCost !== "" && firstCost !== 0 && (
+      {firstCost !== "" && firstCost !== 0 && numberOfPeriods !== 0 && (
         <View style={styles.tableContainer}>
           {CBV.map((BV, index) => {
             return (
-              <View key={`Year${index + 1}`}>
-                <Text style={styles.outputHeading}>{`Year ${index + 1}`}</Text>
+              <View key={`period${index + 1}`}>
+                <Text style={styles.outputHeading}>{`Period ${
+                  index + 1
+                }`}</Text>
 
                 <View style={styles.numbersContainer}>
-                  <Text
-                    style={styles.data}
-                  >{`Opening BV = ${OBV[index]}`}</Text>
+                  <Text style={styles.data}>{`Opening BV = ${Number(
+                    OBV[index]
+                  ).toFixed(2)}`}</Text>
 
                   <Text style={styles.data}>{`Depreciation = ${yearlyDep[
                     index
@@ -144,6 +154,7 @@ const styles = StyleSheet.create({
     borderColor: "black",
     borderWidth: 1,
     fontSize: 20,
+    borderRadius: 10,
   },
   outputHeading: {
     marginTop: 20,

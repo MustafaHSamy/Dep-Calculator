@@ -12,7 +12,10 @@ const HomeScreen = ({ navigation }) => {
         text="Depreciation Calculator"
       />
       <View style={styles.buttonsContaier}>
-        <Text style={styles.methodsHeader}>Choose method</Text>
+        <View style={{ alignItems: "center" }}>
+          <Text style={styles.methodsHeader}>Choose method</Text>
+          <Text style={styles.comingSoon}>More methods coming soon!</Text>
+        </View>
         <MadeButton
           onPress={() => navigation.navigate("SLM")}
           buttonStyles={styles.button}
@@ -31,16 +34,11 @@ const HomeScreen = ({ navigation }) => {
           textStyles={styles.buttonText}
           title="Sum-of-Years digits"
         />
-        <MadeButton
-          buttonStyles={styles.button}
-          textStyles={styles.buttonText}
-          title="Active working hours"
-        />
-        <MadeButton
-          buttonStyles={styles.button}
-          textStyles={styles.buttonText}
-          title="Units of production"
-        />
+        <View style={styles.footer}>
+          <Text style={styles.contactMe}>
+            Do you have feedback? contact me, mustafa.samy591@gmail.com
+          </Text>
+        </View>
       </View>
     </View>
   );
@@ -55,6 +53,9 @@ const styles = StyleSheet.create({
   },
   headerText: {
     color: "white",
+  },
+  comingSoon: {
+    color: "gray",
   },
   buttonsContaier: {
     flex: 1,
@@ -82,6 +83,16 @@ const styles = StyleSheet.create({
   },
   methodsHeader: {
     fontSize: 40,
+  },
+  footer: {
+    justifyContent: "center",
+    alignItems: "center",
+    position: "relative",
+    bottom: -50,
+  },
+  contactMe: {
+    color: "gray",
+    textAlign: "center",
   },
 });
 

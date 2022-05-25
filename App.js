@@ -5,6 +5,7 @@ import HomeScreen from "./screens/HomeScreen";
 import StraightLine from "./screens/StraightLine";
 import DoubleDecliningBalance from "./screens/DoubleDecliningBalance";
 import SumOfYearsDigits from "./screens/SumOfYearsDigits";
+import InitialPage from "./screens/InitialPage";
 
 const Stack = createNativeStackNavigator();
 

@@ -29,7 +29,7 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "description": "An application that calculates the depreciation for economic applications ( still under development, straight line method is the only one working)",
+    "description": "An application that calculates the depreciation for economic applications ( still under development)",
     "githubUrl": "https://github.com/MustafaHSamy/Dep-Calculator.git"
   }
 }
