@@ -6,6 +6,7 @@ import StraightLine from "./screens/StraightLine";
 import DoubleDecliningBalance from "./screens/DoubleDecliningBalance";
 import SumOfYearsDigits from "./screens/SumOfYearsDigits";
 import InitialPage from "./screens/InitialPage";
+import UnitsOfProduction from "./screens/UnitsOfProduction";
 
 const Stack = createNativeStackNavigator();
 
@@ -50,6 +51,14 @@ export default function App() {
             headerStyle: { backgroundColor: "#43938A" },
           }}
         />
+        {/* <Stack.Screen
+          name="UOP"
+          component={UnitsOfProduction}
+          options={{
+            title: "Units of Production method",
+            headerStyle: { backgroundColor: "#43938A" },
+          }}
+        /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );

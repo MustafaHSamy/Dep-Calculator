@@ -42,7 +42,7 @@ const HomeScreen = ({ navigation }) => {
         />
         <View style={styles.footer}>
           <Text style={styles.contactMe}>
-            Do you have feedback? contact me, mustafa.samy591@gmail.com
+            Do you have feedback? reach me mustafa.samy591@gmail.com
           </Text>
         </View>
       </View>

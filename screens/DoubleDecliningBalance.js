@@ -1,6 +1,7 @@
 import {
   Alert,
   ScrollView,
+  StatusBar,
   StyleSheet,
   Text,
   TextInput,
@@ -133,7 +134,7 @@ const styles = StyleSheet.create({
   inputContainer: {
     flex: 0.25,
     alignItems: "center",
-    marginTop: 30,
+    marginTop: StatusBar.currentHeight,
   },
   input: {
     marginBottom: 25,
