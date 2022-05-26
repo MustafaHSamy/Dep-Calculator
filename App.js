@@ -10,12 +10,17 @@ import InitialPage from "./screens/InitialPage";
 const Stack = createNativeStackNavigator();
 
 export default function App() {
-  const myColors = ["#033855", "#0E65A3", "#F86400", "#F79500", "#EBB652"];
-  const myColors2 = ["#F79500", "#F2A766", "#F0BD70", "#43938A", "#2F6569"];
+  // myColors "#033855", "#0E65A3", "#F86400", "#F79500", "#EBB652"
+  // myColors2 "#F79500", "#F2A766", "#F0BD70", "#43938A", "#2F6569"
 
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen
+          name="initial"
+          component={InitialPage}
+          options={{ headerShown: false }}
+        />
         <Stack.Screen
           name="Home"
           component={HomeScreen}

@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, StatusBar } from "react-native";
 import React from "react";
 import MadeButton from "../components/MadeButton";
 import Header from "../components/Header";
@@ -10,6 +10,12 @@ const HomeScreen = ({ navigation }) => {
         headerStyles={styles.header}
         headerTextStyles={styles.headerText}
         text="Depreciation Calculator"
+      />
+      <MadeButton
+        onPress={() => navigation.navigate("initial")}
+        title={"◄ See our team"}
+        buttonStyles={styles.teamButton}
+        textStyles={styles.teamBtnText}
       />
       <View style={styles.buttonsContaier}>
         <View style={{ alignItems: "center" }}>
@@ -47,6 +53,7 @@ const HomeScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
+    backgroundColor: "#E3EBF8",
   },
   header: {
     backgroundColor: "#033855",
@@ -61,7 +68,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "space-evenly",
     alignItems: "center",
-    backgroundColor: "#E3EBF8",
   },
   button: {
     borderRadius: 10,
@@ -93,6 +99,13 @@ const styles = StyleSheet.create({
   contactMe: {
     color: "gray",
     textAlign: "center",
+  },
+  teamButton: {
+    position: "absolute",
+    top: StatusBar.currentHeight + 65,
+  },
+  teamBtnText: {
+    fontWeight: "bold",
   },
 });
 

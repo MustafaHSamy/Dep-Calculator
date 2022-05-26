@@ -100,21 +100,19 @@ const StraightLine = () => {
                 }`}</Text>
 
                 <View style={styles.numbersContainer}>
-                  <Text style={styles.data}>{`Opening BV = ${Number(
+                  <Text style={styles.data}>{`Opening BV  ${Number(
                     OBV[index]
                   ).toFixed(2)}`}</Text>
 
-                  <Text
-                    style={styles.data}
-                  >{`Depreciation = ${yearlyDep.toFixed(2)}`}</Text>
-
-                  <Text
-                    style={styles.data}
-                  >{`Accumulated Dep = ${accumulatedDep[index].toFixed(
+                  <Text style={styles.data}>{`Depreciation  ${yearlyDep.toFixed(
                     2
                   )}`}</Text>
 
-                  <Text style={styles.data}>{`Closing BV = ${BV.toFixed(
+                  <Text style={styles.data}>{`Accumulated Dep  ${accumulatedDep[
+                    index
+                  ].toFixed(2)}`}</Text>
+
+                  <Text style={styles.data}>{`Closing BV  ${BV.toFixed(
                     2
                   )}`}</Text>
                 </View>
@@ -149,6 +147,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   outputHeading: {
+    paddingLeft: 10,
     marginTop: 20,
     fontWeight: "bold",
     fontSize: 20,
@@ -158,17 +157,13 @@ const styles = StyleSheet.create({
   numbersContainer: {
     flex: 1,
     padding: 10,
-    flexDirection: "row",
-    flexWrap: "wrap",
     justifyContent: "space-between",
-    alignContent: "space-around",
   },
   data: {
-    height: 20,
     paddingHorizontal: 2,
     marginHorizontal: 2,
     marginVertical: 10,
     fontWeight: "bold",
-    fontSize: 15,
+    fontSize: 18,
   },
 });
