@@ -1,6 +1,7 @@
 import {
   Alert,
   ScrollView,
+  StatusBar,
   StyleSheet,
   Text,
   TextInput,
@@ -63,8 +64,8 @@ const SumOfYearsDigits = () => {
             if (!isNaN(Number(e))) {
               if (Number(e) > 500) {
                 Alert.alert(
-                  "buying for you great great children?",
-                  "I'm sorry but entering too long periods could make the app crash. If you have a problem with this, please contact me."
+                  "Too many periods",
+                  "I'm sorry but entering too long periods could make the app crash. I will fix this soon, if you have a problem with this, please contact me."
                 );
                 setNumberOfPeriods(500);
               } else {
@@ -144,7 +145,7 @@ const styles = StyleSheet.create({
   inputContainer: {
     flex: 0.25,
     alignItems: "center",
-    marginTop: 30,
+    marginTop: StatusBar.currentHeight,
   },
   input: {
     marginBottom: 25,
