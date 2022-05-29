@@ -12,6 +12,11 @@ const UnitsOfProduction = () => {
         <View>
           {
             //TODO here goes the iputs for the production units of each period
+            //TODO make an iterator array whose length is equal to number of peroids
+            //TODO iterate over the iterator array to show text input for each period
+            //TODO each text input gets the key of the index it was created at
+            //TODO create an array the gets the output of each text input and stores it in arr[{index of text input}]
+            //TODO create handleChangingUnits method with useEffect to update the array that contains the units of production of each year on change
           }
         </View>
       </View>

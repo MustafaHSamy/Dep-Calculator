@@ -1,11 +1,18 @@
-import { Image, StatusBar, StyleSheet, Text, View } from "react-native";
+import {
+  Image,
+  ScrollView,
+  StatusBar,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 import React, { useEffect } from "react";
 import { ImageBackground } from "react-native-web";
 import MadeButton from "../components/MadeButton";
 
 const InitialPage = ({ navigation }) => {
   return (
-    <View style={styles.screen}>
+    <ScrollView style={styles.screen}>
       <View style={styles.logos}>
         <Image
           source={require("../assets/fbeng_logo2.png")}
@@ -40,7 +47,7 @@ const InitialPage = ({ navigation }) => {
         buttonStyles={styles.button}
         textStyles={styles.btnText}
       />
-    </View>
+    </ScrollView>
   );
 };
 
