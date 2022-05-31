@@ -51,14 +51,14 @@ export default function App() {
             headerStyle: { backgroundColor: "#43938A" },
           }}
         />
-        {/* <Stack.Screen
+        <Stack.Screen
           name="UOP"
           component={UnitsOfProduction}
           options={{
             title: "Units of Production method",
             headerStyle: { backgroundColor: "#43938A" },
           }}
-        /> */}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

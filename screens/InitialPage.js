@@ -12,13 +12,12 @@ import MadeButton from "../components/MadeButton";
 
 const InitialPage = ({ navigation }) => {
   return (
-    <ScrollView style={styles.screen}>
+    <View style={styles.screen}>
       <View style={styles.logos}>
         <Image
           source={require("../assets/fbeng_logo2.png")}
           style={styles.collegeLogo}
         />
-        {/* <Image source={require("../assets/benhaUni.png")} style={styles.logo} /> */}
       </View>
       <Text style={styles.head}>Team</Text>
       <View style={styles.namesContainer}>
@@ -47,7 +46,7 @@ const InitialPage = ({ navigation }) => {
         buttonStyles={styles.button}
         textStyles={styles.btnText}
       />
-    </ScrollView>
+    </View>
   );
 };
 

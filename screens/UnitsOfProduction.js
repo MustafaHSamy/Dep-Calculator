@@ -1,6 +1,6 @@
 import { StatusBar, StyleSheet, Text, View } from "react-native";
-import React, { useState } from "react";
-import { TextInput } from "react-native";
+import React, { useState, useEffect } from "react";
+import { TextInput, Alert } from "react-native";
 
 const UnitsOfProduction = () => {
   const [firstCost, setFirstCost] = useState(0);
@@ -34,9 +34,9 @@ const UnitsOfProduction = () => {
     setSpecificDep(specificUnits * depPerUnit);
   };
 
-  useEffect(handleCalculating(), [firstCost, totalUnits, salvageValue]);
-  useEffect(handleSpecificOBV(), [specificTotalUnits]);
-  useEffect(handleSpecificDep(), [specificUnits]);
+  useEffect(() => handleCalculating(), [firstCost, totalUnits, salvageValue]);
+  useEffect(() => handleSpecificOBV(), [specificTotalUnits]);
+  useEffect(() => handleSpecificDep(), [specificUnits]);
 
   return (
     <View style={styles.screen}>
@@ -74,14 +74,19 @@ const UnitsOfProduction = () => {
             }
           }}
         />
+      </View>
+      {firstCost !== 0 && totalUnits !== 0 && (
         <View style={styles.numbersContainer}>
-          <Text>Depreciation per unit produced = {depPerUnit}</Text>
-          <View>
+          <Text style={styles.dataText}>
+            Depreciation per unit produced = {depPerUnit}
+          </Text>
+          <View style={styles.data}>
             <Text>
-              Enter number of units produced during a specific year to get its
+              Enter number of units produced during a specific period to get its
               depreciation
             </Text>
             <TextInput
+              style={styles.input}
               placeholder="Enter"
               onChangeText={(e) => {
                 if (!isNaN(Number(e))) {
@@ -94,14 +99,17 @@ const UnitsOfProduction = () => {
                 }
               }}
             />
-            <Text>Depreciation = {specificDep}</Text>
+            {specificUnits !== 0 && (
+              <Text style={styles.dataText}>Depreciation = {specificDep}</Text>
+            )}
           </View>
-          <View>
+          <View style={styles.data}>
             <Text>
-              Enter the total number of units produced by a specific year to get
-              its opening book value
+              Enter the total number of units produced by a specific period to
+              get its opening book value
             </Text>
             <TextInput
+              style={styles.input}
               placeholder="Enter"
               onChangeText={(e) => {
                 if (!isNaN(Number(e))) {
@@ -114,11 +122,17 @@ const UnitsOfProduction = () => {
                 }
               }}
             />
-            <Text>OpeningBV = {sepecificOBV}</Text>
-            <Text>Accumulated depreciation = {accDep}</Text>
+            {specificTotalUnits !== 0 && (
+              <View>
+                <Text style={styles.dataText}>OpeningBV = {sepecificOBV}</Text>
+                <Text style={styles.dataText}>
+                  Accumulated depreciation = {accDep}
+                </Text>
+              </View>
+            )}
           </View>
         </View>
-      </View>
+      )}
     </View>
   );
 };
@@ -130,14 +144,19 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   inputContainer: {
-    flex: 0.25,
     alignItems: "center",
     marginTop: StatusBar.currentHeight,
   },
   numbersContainer: {
-    flex: 1,
     padding: 10,
     justifyContent: "space-between",
+  },
+  data: {
+    paddingVertical: 20,
+  },
+  dataText: {
+    fontWeight: "bold",
+    fontSize: 17,
   },
   input: {
     marginBottom: 25,

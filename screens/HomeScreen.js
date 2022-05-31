@@ -20,7 +20,6 @@ const HomeScreen = ({ navigation }) => {
       <View style={styles.buttonsContaier}>
         <View style={{ alignItems: "center" }}>
           <Text style={styles.methodsHeader}>Choose method</Text>
-          <Text style={styles.comingSoon}>More methods coming soon!</Text>
         </View>
         <MadeButton
           onPress={() => navigation.navigate("SLM")}
@@ -39,6 +38,12 @@ const HomeScreen = ({ navigation }) => {
           buttonStyles={styles.button}
           textStyles={styles.buttonText}
           title="Sum-of-Years digits"
+        />
+        <MadeButton
+          onPress={() => navigation.navigate("UOP")}
+          buttonStyles={styles.button}
+          textStyles={styles.buttonText}
+          title="Units of Production"
         />
         <View style={styles.footer}>
           <Text style={styles.contactMe}>
