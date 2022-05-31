@@ -6,7 +6,6 @@ import Header from "../components/Header";
 const HomeScreen = ({ navigation }) => {
   return (
     <View style={styles.screen}>
-      <StatusBar barStyle="light-content" />
       <Header
         headerStyles={styles.header}
         headerTextStyles={styles.headerText}
@@ -52,6 +51,7 @@ const HomeScreen = ({ navigation }) => {
           </Text>
         </View>
       </View>
+      <StatusBar barStyle="dark-content" />
     </View>
   );
 };

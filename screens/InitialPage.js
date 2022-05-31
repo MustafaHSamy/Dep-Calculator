@@ -46,6 +46,7 @@ const InitialPage = ({ navigation }) => {
         buttonStyles={styles.button}
         textStyles={styles.btnText}
       />
+      <StatusBar barStyle="dark-content" />
     </View>
   );
 };

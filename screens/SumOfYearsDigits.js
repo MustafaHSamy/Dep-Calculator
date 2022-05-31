@@ -132,6 +132,7 @@ const SumOfYearsDigits = () => {
           })}
         </View>
       )}
+      <StatusBar barStyle="dark-content" />
     </ScrollView>
   );
 };
