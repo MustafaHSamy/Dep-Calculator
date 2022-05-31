@@ -10,7 +10,6 @@ import React from "react";
 const Header = ({ headerStyles, headerTextStyles, text }) => {
   return (
     <TouchableNativeFeedback>
-      <StatusBar barStyle="dark-content" />
       <View style={[styles.header, headerStyles]}>
         <Text style={[styles.headerText, headerTextStyles]}>{text}</Text>
       </View>

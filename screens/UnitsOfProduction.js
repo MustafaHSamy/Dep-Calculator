@@ -133,7 +133,7 @@ const UnitsOfProduction = () => {
           </View>
         </View>
       )}
-      <StatusBar barStyle="dark-content" />
+      <StatusBar barStyle="default" />
     </View>
   );
 };
