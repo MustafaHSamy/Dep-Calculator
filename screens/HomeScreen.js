@@ -6,6 +6,7 @@ import Header from "../components/Header";
 const HomeScreen = ({ navigation }) => {
   return (
     <View style={styles.screen}>
+      <StatusBar barStyle="light-content" />
       <Header
         headerStyles={styles.header}
         headerTextStyles={styles.headerText}
@@ -107,7 +108,7 @@ const styles = StyleSheet.create({
   },
   teamButton: {
     position: "absolute",
-    top: StatusBar.currentHeight + 65,
+    top: StatusBar.currentHeight + 30,
   },
   teamBtnText: {
     fontWeight: "bold",

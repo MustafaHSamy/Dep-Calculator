@@ -23,8 +23,7 @@ const styles = StyleSheet.create({
   header: {
     alignItems: "center",
     justifyContent: "center",
-    paddingTop: StatusBar.currentHeight,
-    height: StatusBar.currentHeight + 70,
+    paddingVertical: StatusBar.currentHeight - 20,
   },
   headerText: {
     fontWeight: "bold",

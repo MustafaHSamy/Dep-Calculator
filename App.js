@@ -7,6 +7,8 @@ import DoubleDecliningBalance from "./screens/DoubleDecliningBalance";
 import SumOfYearsDigits from "./screens/SumOfYearsDigits";
 import InitialPage from "./screens/InitialPage";
 import UnitsOfProduction from "./screens/UnitsOfProduction";
+import Test from "./screens/Test";
+import { StatusBar } from "react-native";
 
 const Stack = createNativeStackNavigator();
 
