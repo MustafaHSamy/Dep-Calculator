@@ -4,7 +4,7 @@ import React from "react";
 const Test = () => {
   return (
     <View style={styles.screen}>
-      <Image source={require("../assets/splash.jpeg")} style={styles.photo} />
+      <Image source={require("../assets/splash.png")} style={styles.photo} />
     </View>
   );
 };
