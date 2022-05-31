@@ -51,7 +51,7 @@ const HomeScreen = ({ navigation }) => {
           </Text>
         </View>
       </View>
-      <StatusBar barStyle="dark-content" />
+      <StatusBar barStyle="default" backgroundColor={"#033855"} />
     </View>
   );
 };

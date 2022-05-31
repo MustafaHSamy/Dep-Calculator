@@ -124,7 +124,7 @@ const StraightLine = () => {
           })}
         </View>
       )}
-      <StatusBar barStyle="dark-content" />
+      <StatusBar barStyle="default" backgroundColor={"#43938A"} />
     </ScrollView>
   );
 };
