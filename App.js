@@ -16,6 +16,8 @@ export default function App() {
   // myColors "#033855", "#0E65A3", "#F86400", "#F79500", "#EBB652"
   // myColors2 "#F79500", "#F2A766", "#F0BD70", "#43938A", "#2F6569"
 
+  //TODO remove padding top from initail page
+  //TODO make the font of the "see our team" button larger
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
