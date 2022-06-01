@@ -56,7 +56,6 @@ export default InitialPage;
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    paddingTop: StatusBar.currentHeight + 20,
     alignItems: "center",
     backgroundColor: "#033855",
     padding: 10,

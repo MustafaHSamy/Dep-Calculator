@@ -112,6 +112,7 @@ const styles = StyleSheet.create({
   },
   teamBtnText: {
     fontWeight: "bold",
+    fontSize: 15,
   },
 });
 

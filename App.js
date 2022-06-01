@@ -51,7 +51,7 @@ export default function App() {
           name="SYD"
           component={SumOfYearsDigits}
           options={{
-            title: "Double-declining balance method",
+            title: "Sum of Years digits method",
             headerStyle: { backgroundColor: "#43938A" },
           }}
         />
