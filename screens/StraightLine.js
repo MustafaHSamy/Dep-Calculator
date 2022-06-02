@@ -139,7 +139,7 @@ const styles = StyleSheet.create({
   inputContainer: {
     flex: 0.25,
     alignItems: "center",
-    marginTop: StatusBar.currentHeight,
+    marginVertical: StatusBar.currentHeight,
   },
   input: {
     marginBottom: 25,
@@ -166,7 +166,6 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   data: {
-    paddingHorizontal: 2,
     marginHorizontal: 2,
     marginVertical: 10,
     fontWeight: "bold",
@@ -175,7 +174,7 @@ const styles = StyleSheet.create({
   },
   period: {
     backgroundColor: "#43938A",
-    marginVertical: 20,
+    marginVertical: 15,
     marginHorizontal: 10,
     borderRadius: 10,
     shadowColor: "#000",
@@ -185,7 +184,6 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
-
     elevation: 5,
   },
 });

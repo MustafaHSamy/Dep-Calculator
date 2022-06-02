@@ -103,7 +103,7 @@ const SumOfYearsDigits = () => {
         <View style={styles.tableContainer}>
           {CBV.map((BV, index) => {
             return (
-              <View key={`period${index + 1}`}>
+              <View key={`period${index + 1}`} style={styles.period}>
                 <Text style={styles.outputHeading}>{`Period ${
                   index + 1
                 }`}</Text>
@@ -142,11 +142,12 @@ export default SumOfYearsDigits;
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
+    backgroundColor: "#E3EBF8",
   },
   inputContainer: {
     flex: 0.25,
     alignItems: "center",
-    marginTop: StatusBar.currentHeight,
+    marginVertical: StatusBar.currentHeight,
   },
   input: {
     marginBottom: 25,
@@ -159,12 +160,13 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   outputHeading: {
-    paddingLeft: 10,
-    marginTop: 20,
+    textAlign: "center",
+    paddingVertical: 10,
     fontWeight: "bold",
     fontSize: 20,
     borderBottomWidth: 1,
     borderBottomColor: "black",
+    color: "white",
   },
   numbersContainer: {
     flex: 1,
@@ -177,5 +179,20 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     fontWeight: "bold",
     fontSize: 18,
+    color: "white",
+  },
+  period: {
+    backgroundColor: "#43938A",
+    marginVertical: 15,
+    marginHorizontal: 10,
+    borderRadius: 10,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
   },
 });
