@@ -1,6 +1,6 @@
 import { StatusBar, StyleSheet, Text, View } from "react-native";
 import React, { useState, useEffect } from "react";
-import { TextInput, Alert } from "react-native";
+import { TextInput, Alert, ScrollView } from "react-native";
 
 const UnitsOfProduction = () => {
   const [firstCost, setFirstCost] = useState(0);
@@ -39,7 +39,7 @@ const UnitsOfProduction = () => {
   useEffect(() => handleSpecificDep(), [specificUnits]);
 
   return (
-    <View style={styles.screen}>
+    <ScrollView style={styles.screen}>
       <View style={styles.inputContainer}>
         <TextInput
           style={styles.input}
@@ -78,10 +78,10 @@ const UnitsOfProduction = () => {
       {firstCost !== 0 && totalUnits !== 0 && (
         <View style={styles.numbersContainer}>
           <Text style={styles.dataText}>
-            Depreciation per unit produced = {depPerUnit}
+            Depreciation by unit = {depPerUnit}
           </Text>
           <View style={styles.data}>
-            <Text>
+            <Text style={styles.dataTitle}>
               Enter number of units produced during a specific period to get its
               depreciation
             </Text>
@@ -100,11 +100,13 @@ const UnitsOfProduction = () => {
               }}
             />
             {specificUnits !== 0 && (
-              <Text style={styles.dataText}>Depreciation = {specificDep}</Text>
+              <Text style={[styles.dataText, styles.dataResult]}>
+                Depreciation = {specificDep}
+              </Text>
             )}
           </View>
           <View style={styles.data}>
-            <Text>
+            <Text style={styles.dataTitle}>
               Enter the total number of units produced by a specific period to
               get its opening book value
             </Text>
@@ -124,8 +126,10 @@ const UnitsOfProduction = () => {
             />
             {specificTotalUnits !== 0 && (
               <View>
-                <Text style={styles.dataText}>OpeningBV = {sepecificOBV}</Text>
-                <Text style={styles.dataText}>
+                <Text style={[styles.dataText, styles.dataResult]}>
+                  OpeningBV = {sepecificOBV}
+                </Text>
+                <Text style={[styles.dataText, styles.dataResult]}>
                   Accumulated depreciation = {accDep}
                 </Text>
               </View>
@@ -134,7 +138,7 @@ const UnitsOfProduction = () => {
         </View>
       )}
       <StatusBar barStyle="default" backgroundColor={"#43938A"} />
-    </View>
+    </ScrollView>
   );
 };
 
@@ -143,6 +147,7 @@ export default UnitsOfProduction;
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
+    backgroundColor: "#E3EBF8",
   },
   inputContainer: {
     alignItems: "center",
@@ -154,6 +159,18 @@ const styles = StyleSheet.create({
   },
   data: {
     paddingVertical: 20,
+    paddingHorizontal: 10,
+    backgroundColor: "#43938A",
+    marginVertical: 15,
+    borderRadius: 10,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
   },
   dataText: {
     fontWeight: "bold",
@@ -168,5 +185,14 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     fontSize: 20,
     borderRadius: 10,
+  },
+  dataTitle: {
+    color: "white",
+    marginBottom: 15,
+    fontSize: 15,
+  },
+  dataResult: {
+    color: "white",
+    marginVertical: 5,
   },
 });
