@@ -45,6 +45,12 @@ const HomeScreen = ({ navigation }) => {
           textStyles={styles.buttonText}
           title="Units of Production"
         />
+        <MadeButton
+          onPress={() => navigation.navigate("AWH")}
+          buttonStyles={styles.button}
+          textStyles={styles.buttonText}
+          title="Active Working Hours"
+        />
         <View style={styles.footer}>
           <Text style={styles.contactMe}>
             Do you have feedback? reach me mustafa.samy591@gmail.com
@@ -95,6 +101,7 @@ const styles = StyleSheet.create({
   },
   methodsHeader: {
     fontSize: 40,
+    marginTop: 20,
   },
   footer: {
     justifyContent: "center",
@@ -105,6 +112,7 @@ const styles = StyleSheet.create({
   contactMe: {
     color: "gray",
     textAlign: "center",
+    paddingBottom: 30,
   },
   teamButton: {
     position: "absolute",

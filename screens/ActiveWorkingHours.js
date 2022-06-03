@@ -56,7 +56,7 @@ const UnitsOfProduction = () => {
         <TextInput
           keyboardType="numeric"
           style={styles.input}
-          placeholder="Total units"
+          placeholder="Total active hours"
           onChangeText={(e) => {
             if (!isNaN(Number(e))) {
               setTotalUnits(Number(e));
@@ -81,11 +81,11 @@ const UnitsOfProduction = () => {
       {firstCost !== 0 && totalUnits !== 0 && (
         <View style={styles.numbersContainer}>
           <Text style={styles.dataText}>
-            Depreciation by unit = {depPerUnit.toFixed(2)}
+            Depreciation by hour = {depPerUnit.toFixed(2)}
           </Text>
           <View style={styles.data}>
             <Text style={styles.dataTitle}>
-              Enter number of units produced during a specific period to get its
+              Enter number of active hours for a specific period to get its
               depreciation
             </Text>
             <TextInput
@@ -111,8 +111,8 @@ const UnitsOfProduction = () => {
           </View>
           <View style={styles.data}>
             <Text style={styles.dataTitle}>
-              Enter the total number of units produced by a specific period to
-              get its opening book value
+              Enter the total number of active hours by a specific period to get
+              its opening book value
             </Text>
             <TextInput
               keyboardType="numeric"

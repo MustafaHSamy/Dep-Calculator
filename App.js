@@ -7,6 +7,7 @@ import DoubleDecliningBalance from "./screens/DoubleDecliningBalance";
 import SumOfYearsDigits from "./screens/SumOfYearsDigits";
 import InitialPage from "./screens/InitialPage";
 import UnitsOfProduction from "./screens/UnitsOfProduction";
+import ActiveWorkingHours from "./screens/ActiveWorkingHours";
 import Test from "./screens/Test";
 import { StatusBar } from "react-native";
 
@@ -57,6 +58,14 @@ export default function App() {
           component={UnitsOfProduction}
           options={{
             title: "Units of Production method",
+            headerStyle: { backgroundColor: "#43938A" },
+          }}
+        />
+        <Stack.Screen
+          name="AWH"
+          component={ActiveWorkingHours}
+          options={{
+            title: "Active working hours method",
             headerStyle: { backgroundColor: "#43938A" },
           }}
         />

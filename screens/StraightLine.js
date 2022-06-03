@@ -50,6 +50,7 @@ const StraightLine = () => {
     <ScrollView style={styles.screen}>
       <View style={styles.inputContainer}>
         <TextInput
+          keyboardType="numeric"
           style={styles.input}
           placeholder="Life periods"
           onChangeText={(e) => {
@@ -69,6 +70,7 @@ const StraightLine = () => {
           }}
         />
         <TextInput
+          keyboardType="numeric"
           style={styles.input}
           placeholder="First cost"
           onChangeText={(e) => {
@@ -80,6 +82,7 @@ const StraightLine = () => {
           }}
         />
         <TextInput
+          keyboardType="numeric"
           style={styles.input}
           placeholder="Salavge value"
           onChangeText={(e) => {
