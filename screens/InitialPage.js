@@ -39,7 +39,7 @@ const InitialPage = ({ navigation }) => {
         </View>
       </View>
       <Text style={styles.name}>Submitted to:</Text>
-      <Text style={styles.name}> Prof. Dr. Ibrahim Sabry</Text>
+      <Text style={styles.name}> Dr. Ibrahim Sabry</Text>
       <MadeButton
         onPress={() => navigation.navigate("Home")}
         title={"Go to application ➜"}
