@@ -32,7 +32,7 @@ const StraightLine = () => {
       for (let i = 0; i < numberOfPeriods; i++) {
         closingBV[i] = openingBV[i] - depYearly;
         openingBV[i + 1] = closingBV[i];
-        accDep[i] = (i + 1) * depYearly;
+        accDep[i] = firstCost - closingBV[i];
       }
       setAccumulatedDep(accDep);
       setCBV(closingBV);

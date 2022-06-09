@@ -2,41 +2,41 @@ import { StatusBar, StyleSheet, Text, View } from "react-native";
 import React, { useState, useEffect } from "react";
 import { TextInput, Alert, ScrollView } from "react-native";
 
-const UnitsOfProduction = () => {
+const ActiveWorkingHours = () => {
   const [firstCost, setFirstCost] = useState(0);
-  const [totalUnits, setTotalUnits] = useState(0);
+  const [totalHours, setTotalHours] = useState(0);
   const [salvageValue, setSalvageValue] = useState(0);
   const [depPerUnit, setDepPerUnit] = useState(0);
-  const [specificUnits, setSpecificUnits] = useState(0); //to get the reading of the input of specific year dep
-  const [specificTotalUnits, setSpecificTotalUnits] = useState(0); //to get the reading of the input of specific year obv
+  const [specificHours, setSpecificHours] = useState(0); //to get the reading of the input of specific year dep
+  const [specificTotalHours, setSpecificTotalHours] = useState(0); //to get the reading of the input of specific year obv
   const [sepecificOBV, setSpecificOBV] = useState(0); //to store the data that will be show to the user
   const [accDep, setAccDep] = useState(0); //to store the data that will be show to the user
   const [specificDep, setSpecificDep] = useState(0); //to store the data that will be show to the user
 
   const handleCalculating = () => {
     const validInput =
-      totalUnits !== "" &&
-      totalUnits !== 0 &&
-      totalUnits !== undefined &&
+      totalHours !== "" &&
+      totalHours !== 0 &&
+      totalHours !== undefined &&
       firstCost !== undefined;
 
     let depEach = 0;
     if (validInput) {
-      depEach = (firstCost - salvageValue) / totalUnits;
+      depEach = (firstCost - salvageValue) / totalHours;
     }
     setDepPerUnit(depEach);
   };
   const handleSpecificOBV = () => {
-    setSpecificOBV(firstCost - depPerUnit * specificTotalUnits);
-    setAccDep(depPerUnit * specificTotalUnits);
+    setSpecificOBV(firstCost - depPerUnit * specificTotalHours);
+    setAccDep(depPerUnit * specificTotalHours);
   };
   const handleSpecificDep = () => {
-    setSpecificDep(specificUnits * depPerUnit);
+    setSpecificDep(specificHours * depPerUnit);
   };
 
-  useEffect(() => handleCalculating(), [firstCost, totalUnits, salvageValue]);
-  useEffect(() => handleSpecificOBV(), [specificTotalUnits]);
-  useEffect(() => handleSpecificDep(), [specificUnits]);
+  useEffect(() => handleCalculating(), [firstCost, totalHours, salvageValue]);
+  useEffect(() => handleSpecificOBV(), [specificTotalHours]);
+  useEffect(() => handleSpecificDep(), [specificHours]);
 
   return (
     <ScrollView style={styles.screen}>
@@ -59,7 +59,7 @@ const UnitsOfProduction = () => {
           placeholder="Total active hours"
           onChangeText={(e) => {
             if (!isNaN(Number(e))) {
-              setTotalUnits(Number(e));
+              setTotalHours(Number(e));
             } else {
               Alert.alert("Invalid input", "Please enter a number in English");
             }
@@ -78,7 +78,7 @@ const UnitsOfProduction = () => {
           }}
         />
       </View>
-      {firstCost !== 0 && totalUnits !== 0 && (
+      {firstCost !== 0 && totalHours !== 0 && (
         <View style={styles.numbersContainer}>
           <Text style={styles.dataText}>
             Depreciation by hour = {depPerUnit.toFixed(2)}
@@ -94,7 +94,7 @@ const UnitsOfProduction = () => {
               placeholder="Enter"
               onChangeText={(e) => {
                 if (!isNaN(Number(e))) {
-                  setSpecificUnits(Number(e));
+                  setSpecificHours(Number(e));
                 } else {
                   Alert.alert(
                     "Invalid input",
@@ -103,7 +103,7 @@ const UnitsOfProduction = () => {
                 }
               }}
             />
-            {specificUnits !== 0 && (
+            {specificHours !== 0 && (
               <Text style={[styles.dataText, styles.dataResult]}>
                 Depreciation = {specificDep.toFixed(2)}
               </Text>
@@ -120,7 +120,7 @@ const UnitsOfProduction = () => {
               placeholder="Enter"
               onChangeText={(e) => {
                 if (!isNaN(Number(e))) {
-                  setSpecificTotalUnits(Number(e));
+                  setSpecificTotalHours(Number(e));
                 } else {
                   Alert.alert(
                     "Invalid input",
@@ -129,7 +129,7 @@ const UnitsOfProduction = () => {
                 }
               }}
             />
-            {specificTotalUnits !== 0 && (
+            {specificTotalHours !== 0 && (
               <View>
                 <Text style={[styles.dataText, styles.dataResult]}>
                   OpeningBV = {sepecificOBV.toFixed(2)}
@@ -147,7 +147,7 @@ const UnitsOfProduction = () => {
   );
 };
 
-export default UnitsOfProduction;
+export default ActiveWorkingHours;
 
 const styles = StyleSheet.create({
   screen: {
