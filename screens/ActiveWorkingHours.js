@@ -6,7 +6,7 @@ const ActiveWorkingHours = () => {
   const [firstCost, setFirstCost] = useState(0);
   const [totalHours, setTotalHours] = useState(0);
   const [salvageValue, setSalvageValue] = useState(0);
-  const [depPerUnit, setDepPerUnit] = useState(0);
+  const [depPerHour, setDepPerHour] = useState(0);
   const [specificHours, setSpecificHours] = useState(0); //to get the reading of the input of specific year dep
   const [specificTotalHours, setSpecificTotalHours] = useState(0); //to get the reading of the input of specific year obv
   const [sepecificOBV, setSpecificOBV] = useState(0); //to store the data that will be show to the user
@@ -24,14 +24,14 @@ const ActiveWorkingHours = () => {
     if (validInput) {
       depEach = (firstCost - salvageValue) / totalHours;
     }
-    setDepPerUnit(depEach);
+    setDepPerHour(depEach);
   };
   const handleSpecificOBV = () => {
-    setSpecificOBV(firstCost - depPerUnit * specificTotalHours);
-    setAccDep(depPerUnit * specificTotalHours);
+    setSpecificOBV(firstCost - depPerHour * specificTotalHours);
+    setAccDep(depPerHour * specificTotalHours);
   };
   const handleSpecificDep = () => {
-    setSpecificDep(specificHours * depPerUnit);
+    setSpecificDep(specificHours * depPerHour);
   };
 
   useEffect(() => handleCalculating(), [firstCost, totalHours, salvageValue]);
@@ -81,7 +81,7 @@ const ActiveWorkingHours = () => {
       {firstCost !== 0 && totalHours !== 0 && (
         <View style={styles.numbersContainer}>
           <Text style={styles.dataText}>
-            Depreciation by hour = {depPerUnit.toFixed(2)}
+            Depreciation by hour = {depPerHour.toFixed(2)}
           </Text>
           <View style={styles.data}>
             <Text style={styles.dataTitle}>
