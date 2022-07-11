@@ -31,7 +31,7 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "description": "An application that calculates the depreciation for economic applications ( still under development)",
+    "description": "An application that calculates the depreciation for economic applications",
     "githubUrl": "https://github.com/MustafaHSamy/Dep-Calculator.git"
   }
 }
