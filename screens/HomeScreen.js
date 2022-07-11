@@ -11,12 +11,6 @@ const HomeScreen = ({ navigation }) => {
         headerTextStyles={styles.headerText}
         text="Depreciation Calculator"
       />
-      <MadeButton
-        onPress={() => navigation.navigate("initial")}
-        title={"◄ See our team"}
-        buttonStyles={styles.teamButton}
-        textStyles={styles.teamBtnText}
-      />
       <View style={styles.buttonsContaier}>
         <View style={{ alignItems: "center" }}>
           <Text style={styles.methodsHeader}>Choose method</Text>
