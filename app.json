@@ -2,7 +2,7 @@
   "expo": {
     "name": "Depreciation Calculator",
     "slug": "Dep-Calculator",
-    "version": "1.8.3",
+    "version": "1.8.4",
     "orientation": "default",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -21,7 +21,7 @@
       "supportsTablet": true
     },
     "android": {
-      "versionCode": 12,
+      "versionCode": 13,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
